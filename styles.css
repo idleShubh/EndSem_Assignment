@@ -98,7 +98,7 @@ button {
     background: var(--bg-color);
     padding: 1rem;
     border-radius: 8px;
-    border: 1px solid var(--border-color);
+    border: 0.9px solid var(--border-color);
 }
 
 .bio {
