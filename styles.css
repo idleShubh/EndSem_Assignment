@@ -1,123 +1,214 @@
 :root {
-    --bg-color: #ffffff;
+    --bg-color: #f0f2f5;
     --text-color: #333333;
-    --card-bg: #f5f5f5;
-    --border-color: #e1e4e8;
+    --card-bg: rgba(255, 255, 255, 0.2);
+    --border-color: rgba(255, 255, 255, 0.3);
+    --shadow-color: rgba(0, 0, 0, 0.1);
 }
 
 .dark-theme {
     --bg-color: #0d1117;
     --text-color: #c9d1d9;
-    --card-bg: #161b22;
-    --border-color: #30363d;
+    --card-bg: rgba(22, 27, 34, 0.6);
+    --border-color: rgba(255, 255, 255, 0.1);
+    --shadow-color: rgba(0, 0, 0, 0.5);
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 body {
     background-color: var(--bg-color);
     color: var(--text-color);
-    transition: all 0.3s ease;
+    transition: all 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
 }
 
 .container {
     max-width: 800px;
-    margin: 2rem auto;
-    padding: 0 20px;
+    width: 90%;
+    margin-top: 3rem;
     text-align: center;
 }
 
+/* 🌙 Theme Toggle */
 .theme-switch {
-    position: absolute;
+    position: fixed;
     top: 20px;
     right: 20px;
-    padding: 8px 16px;
-    border-radius: 20px;
+    padding: 10px 20px;
+    border-radius: 25px;
     border: 1px solid var(--border-color);
     background: var(--card-bg);
     color: var(--text-color);
     cursor: pointer;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease-in-out;
 }
 
+.theme-switch:hover {
+    transform: scale(1.05);
+}
+
+/* 🔍 Search Box */
 .search-box {
-    margin: 2rem 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
 }
 
 input {
-    padding: 10px 20px;
+    padding: 12px 16px;
     font-size: 16px;
     border-radius: 25px;
     border: 1px solid var(--border-color);
     background: var(--card-bg);
     color: var(--text-color);
-    width: 300px;
-    margin-right: 10px;
+    width: 100%;
+    max-width: 320px;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease-in-out;
+}
+
+input:focus {
+    border-color: #58a6ff;
+    outline: none;
 }
 
 button {
-    padding: 10px 20px;
+    padding: 12px 20px;
     border-radius: 25px;
     border: none;
     background: #2ea44f;
     color: white;
     cursor: pointer;
     font-size: 16px;
+    transition: background 0.3s ease, transform 0.2s ease;
 }
 
+button:hover {
+    background: #2c974b;
+    transform: scale(1.05);
+}
+
+/* 🎨 Profile Card */
 .profile-card {
     background: var(--card-bg);
-    border-radius: 10px;
+    border-radius: 15px;
     padding: 2rem;
     margin: 2rem auto;
     max-width: 500px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 16px var(--shadow-color);
     border: 1px solid var(--border-color);
     display: none;
+    text-align: center;
+    backdrop-filter: blur(15px);
+    transition: all 0.3s ease-in-out;
 }
 
 .profile-image {
-    width: 150px;
-    height: 150px;
+    width: 120px;
+    height: 120px;
     border-radius: 50%;
     margin-bottom: 1rem;
+    border: 4px solid var(--border-color);
+    transition: transform 0.3s ease;
 }
 
+.profile-image:hover {
+    transform: rotate(5deg) scale(1.05);
+}
+
+/* 📊 Stats Section */
 .stats {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
     gap: 1rem;
     margin: 1.5rem 0;
 }
 
 .stat-box {
-    background: var(--bg-color);
+    background: rgba(255, 255, 255, 0.1);
     padding: 1rem;
     border-radius: 8px;
     border: 0.9px solid var(--border-color);
+    backdrop-filter: blur(10px);
+    transition: transform 0.2s ease;
 }
 
-.bio {
-    margin: 1rem 0;
-    font-style: italic;
+.stat-box:hover {
+    transform: scale(1.05);
+}
+
+/* 🔗 Links */
+.links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 10px;
 }
 
 .links a {
     color: #58a6ff;
     text-decoration: none;
-    margin: 0 10px;
+    transition: color 0.3s ease-in-out;
 }
 
+.links a:hover {
+    color: #2ea44f;
+}
+
+/* ⬇️ Download Button */
 .download-btn {
     margin-top: 1rem;
     background: #238636;
     transition: background-color 0.3s ease;
+    padding: 12px 24px;
+    border-radius: 30px;
+    font-weight: bold;
 }
 
 .download-btn:hover {
     background: #2ea44f;
+}
+
+/* 📱 Responsive Design */
+@media (max-width: 600px) {
+    .container {
+        padding: 0 15px;
+    }
+
+    .profile-card {
+        padding: 1.5rem;
+    }
+
+    .profile-image {
+        width: 100px;
+        height: 100px;
+    }
+
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .theme-switch {
+        top: 10px;
+        right: 10px;
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+
+    input {
+        width: 100%;
+    }
 }
