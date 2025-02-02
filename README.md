@@ -10,4 +10,5 @@ A web app that fetches GitHub user data via API and generates a stylish profile 
 - 🔗 Easy sharing capability
 
 ## Example output
-<img width="885" alt="Screenshot 2025-02-02 at 2 40 46 PM" src="https://github.com/user-attachments/assets/fb50ccad-c3d0-4f7b-b93f-d132294c4644" />
+
+<img width="1433" alt="Screenshot 2025-02-02 at 2 46 59 PM" src="https://github.com/user-attachments/assets/fa2cb423-d1b7-4c17-8d12-53c5366feeb9" />
