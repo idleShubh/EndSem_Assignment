@@ -38,7 +38,6 @@ body {
     text-align: center;
 }
 
-/* 🌙 Theme Toggle */
 .theme-switch {
     position: fixed;
     top: 20px;
@@ -57,7 +56,6 @@ body {
     transform: scale(1.05);
 }
 
-/* 🔍 Search Box */
 .search-box {
     display: flex;
     flex-wrap: wrap;
@@ -100,7 +98,6 @@ button:hover {
     transform: scale(1.05);
 }
 
-/* 🎨 Profile Card */
 .profile-card {
     background: var(--card-bg);
     border-radius: 15px;
@@ -128,7 +125,6 @@ button:hover {
     transform: rotate(5deg) scale(1.05);
 }
 
-/* 📊 Stats Section */
 .stats {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
@@ -149,7 +145,6 @@ button:hover {
     transform: scale(1.05);
 }
 
-/* 🔗 Links */
 .links {
     display: flex;
     justify-content: center;
@@ -168,7 +163,6 @@ button:hover {
     color: #2ea44f;
 }
 
-/* ⬇️ Download Button */
 .download-btn {
     margin-top: 1rem;
     background: #238636;
@@ -182,33 +176,79 @@ button:hover {
     background: #2ea44f;
 }
 
-/* 📱 Responsive Design */
 @media (max-width: 600px) {
     .container {
         padding: 0 15px;
+        margin-top: 2rem;
+        width: 95%;
     }
 
     .profile-card {
-        padding: 1.5rem;
+        padding: 1.2rem;
+        margin: 1rem 0;
     }
 
     .profile-image {
-        width: 100px;
-        height: 100px;
+        width: 90px;
+        height: 90px;
+        margin: 0 auto 1rem;
     }
 
     .stats {
         grid-template-columns: repeat(2, 1fr);
+        gap: 0.8rem;
+    }
+
+    .stat-box {
+        padding: 0.8rem;
+        font-size: 0.9rem;
     }
 
     .theme-switch {
         top: 10px;
         right: 10px;
-        padding: 8px 16px;
+        padding: 6px 12px;
+        font-size: 13px;
+    }
+
+    .search-box {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    input, button {
+        width: 100%;
         font-size: 14px;
     }
 
-    input {
-        width: 100%;
+    h1 {
+        font-size: 1.5rem;
     }
+
+    h2 {
+        font-size: 1.2rem;
+    }
+
+    .bio {
+        font-size: 0.9rem;
+    }
+
+    .download-btn {
+        padding: 10px 20px;
+        font-size: 14px;
+        width: 100%;
+        margin-top: 1.5rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .stats {
+        grid-template-columns: 1fr;
+    }
+    
+    .profile-image {
+        width: 80px;
+        height: 80px;
+    }
+}
 }
