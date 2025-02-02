@@ -49,9 +49,26 @@ let isDarkTheme = false;
                         ${userData.location ? `📍 ${userData.location}` : ''}
                         ${userData.company ? ` • 🏢 ${userData.company}` : ''}
                     </p>
+                    <button onclick="downloadCard()" class="download-btn">⬇️ Download Card</button>
                 `;
             } catch (error) {
                 card.style.display = 'block';
                 card.innerHTML = `<p>Error: ${error.message}</p>`;
+            }
+        }
+
+        async function downloadCard() {
+            const card = document.getElementById('profile-card');
+            try {
+                const canvas = await html2canvas(card, {
+                    backgroundColor: getComputedStyle(card).backgroundColor
+                });
+                
+                const link = document.createElement('a');
+                link.download = 'github-profile-card.png';
+                link.href = canvas.toDataURL('image/png');
+                link.click();
+            } catch (error) {
+                console.error('Error downloading card:', error);
             }
         }
