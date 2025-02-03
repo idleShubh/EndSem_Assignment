@@ -206,9 +206,9 @@ button:hover {
 
     .theme-switch {
         top: 10px;
-        right: 10px;
         padding: 6px 12px;
         font-size: 13px;
+        width: 90%;
     }
 
     .search-box {
